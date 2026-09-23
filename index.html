@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Villa Málaga Concierge</title>
+
+  <meta
+    name="description"
+    content="Private services, local experiences and effortless stays in Málaga."
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: #25302d;
+      background: #f8f6f1;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 6%;
+      color: white;
+    }
+
+    .logo {
+      font-size: 22px;
+      letter-spacing: 1.5px;
+      font-weight: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: 0.95;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 120px 20px 80px;
+      background:
+        linear-gradient(rgba(25, 35, 32, 0.38), rgba(25, 35, 32, 0.48)),
+        url("https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=2000&q=85")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: normal;
+      line-height: 1.02;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      max-width: 650px;
+      margin: 0 auto 38px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      border: 1px solid white;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background: white;
+      color: #25302d;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 100px 7%;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .intro h2,
+    .services h2,
+    .experiences h2 {
+      font-size: 42px;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      font-size: 19px;
+      color: #59635f;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    /* SERVICES */
+
+    .services {
+      padding: 80px 6% 110px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading p {
+      color: #68716e;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .card {
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      color: white;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        transparent 25%,
+        rgba(15, 25, 22, 0.75)
+      );
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card h3 {
+      font-size: 29px;
+      font-weight: normal;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .transport {
+      background-image:
+        url("https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .breakfast {
+      background-image:
+        url("https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .catering {
+      background-image:
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    .welcome {
+      background-image:
+        url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80");
+    }
+
+    /* EXPERIENCES */
+
+    .experiences {
+      padding: 100px 7%;
+      background: #e9e5dc;
+      text-align: center;
+    }
+
+    .experience-list {
+      max-width: 900px;
+      margin: 50px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .experience-item {
+      background: #f8f6f1;
+      padding: 25px 15px;
+      font-size: 18px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #25302d;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    footer h3 {
+      font-size: 27px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    .footer-button {
+      margin-top: 25px;
+      display: inline-block;
+      padding: 13px 25px;
+      border: 1px solid rgba(255,255,255,0.6);
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .experience-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        padding: 20px;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .hero {
+        min-height: 85vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .intro,
+      .services,
+      .experiences {
+        padding: 70px 20px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 320px;
+      }
+
+      .intro h2,
+      .services h2,
+      .experiences h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Villa Málaga Concierge</div>
+
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Málaga · Costa del Sol
+      </div>
+
+      <h1>
+        Villa Málaga<br>
+        Concierge
+      </h1>
+
+      <p>
+        Private services, local experiences and effortless stays.
+      </p>
+
+      <a href="#services" class="button">
+        Explore Services
+      </a>
+
+    </div>
+  </section>
+
+  <section class="intro">
+
+    <h2>
+      Your stay, beautifully taken care of.
+    </h2>
+
+    <p>
+      From airport transfers and breakfast to private dining and
+      unforgettable experiences, we arrange the details that make
+      your stay in Málaga truly effortless.
+    </p>
+
+  </section>
+
+  <section class="services" id="services">
+
+    <div class="section-heading">
+
+      <h2>
+        Our Services
+      </h2>
+
+      <p>
+        Thoughtfully selected services for your stay.
+      </p>
+
+    </div>
+
+    <div class="cards">
+
+      <a href="#" class="card transport">
+        <div class="card-content">
+          <h3>Transport</h3>
+          <p>Airport transfers & private drivers</p>
+        </div>
+      </a>
+
+      <a href="#" class="card breakfast">
+        <div class="card-content">
+          <h3>Breakfast</h3>
+          <p>Start your morning beautifully</p>
+        </div>
+      </a>
+
+      <a href="#" class="card catering">
+        <div class="card-content">
+          <h3>Private Catering</h3>
+          <p>Dining experiences at your villa</p>
+        </div>
+      </a>
+
+      <a href="#" class="card welcome">
+        <div class="card-content">
+          <h3>Welcome</h3>
+          <p>A thoughtful arrival to Málaga</p>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+  <section class="experiences" id="experiences">
+
+    <div class="section-heading">
+
+      <h2>
+        Discover Málaga
+      </h2>
+
+      <p>
+        Experiences curated for memorable days.
+      </p>
+
+    </div>
+
+    <div class="experience-list">
+
+      <div class="experience-item">
+        Private Boat Trips
+      </div>
+
+      <div class="experience-item">
+        Wine Tasting
+      </div>
+
+      <div class="experience-item">
+        Golf
+      </div>
+
+      <div class="experience-item">
+        Wellness & Massage
+      </div>
+
+      <div class="experience-item">
+        Private Driver
+      </div>
+
+      <div class="experience-item">
+        Beach Clubs
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer id="contact">
+
+    <h3>
+      Villa Málaga Concierge
+    </h3>
+
+    <p>
+      Private services. Local experiences. Effortless stays.
+    </p>
+
+    <a href="#" class="footer-button">
+      Enquire Now
+    </a>
+
+  </footer>
+
+</body>
+</html>
